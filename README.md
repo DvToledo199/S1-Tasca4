@@ -12,35 +12,34 @@ The project is organized by levels and exercises.
 
 ## Exercise 1 – Unit Tests with JUnit
 
-### Original Statement
+### Enunciat original
 
-Create a Java class that manages a collection of books in a library.  
-The class must provide the following functionalities:
+Crea una classe Java que gestioni una col·lecció de llibres d’una biblioteca. Aquesta classe ha d’oferir les funcionalitats següents:
 
-- Add books to the collection.
-- Retrieve the full list of books (in insertion order).
-- Get the title of a book by its position.
-- Add a book at a specific position in the collection.
-- Remove a book by its title.
-- Return a copy of the list sorted alphabetically.
-- Duplicate titles must not be allowed.
+- Afegir llibres a la col·lecció.
+- Recuperar la llista completa de llibres (seguint l’ordre d’inserció).
+- Obtenir el títol d’un llibre a partir de la seva posició.
+- Afegir un llibre en una posició específica dins la col·lecció.
+- Eliminar un llibre pel seu títol.
+- Retornar una còpia de la llista ordenada alfabèticament.
+- No s’han de permetre llibres amb títols duplicats.
 
-Additionally, implement unit tests using JUnit 5 to validate the behavior of the class.
+Implementa tests unitaris amb JUnit 5 per validar el comportament de la classe.
 
-The tests must cover at least:
+Els tests han de cobrir com a mínim:
 
-- The collection must not be null after instantiating the class.
-- The collection size is correct after adding several books.
-- Books are stored in the expected position.
-- Getting a book by position returns the correct title.
-- Adding a book at a specific position modifies the collection correctly.
-- Removing a book reduces the collection size.
-- The sorted list returns books in alphabetical order without modifying the original collection.
-- Duplicate book titles are not allowed.
+- La col·lecció no ha de ser nul·la després d’instanciar la classe.
+- La mida de la col·lecció és correcta després d’afegir diversos llibres.
+- Els llibres es troben a la posició esperada un cop afegits.
+- El mètode per obtenir un llibre per posició retorna el títol correcte.
+- Afegir un llibre en una posició concreta modifica correctament la col·lecció.
+- Eliminar un llibre pel títol redueix la mida de la col·lecció.
+- La llista ordenada retorna els llibres en ordre alfabètic sense modificar la col·lecció original.
+- No s’han de permetre llibres amb títols duplicats.
 
 ---
 
-## Implementation
+### Implementation
 
 A `Library` class was implemented following clean code principles and good OOP practices.
 
@@ -55,7 +54,7 @@ Features implemented:
 
 ---
 
-## Unit Testing
+### Unit Testing
 
 Comprehensive unit tests were implemented in `LibraryTest`.
 
@@ -69,6 +68,43 @@ Tested scenarios include:
 - Remove book by title
 - Duplicate prevention
 - Alphabetical sorting without modifying the original collection
+
+All tests pass successfully.
+
+---
+
+## Exercise 2 – Parameterized Test
+
+### Enunciat original
+
+Crea una classe anomenada `CalculateDNI` que contingui un mètode públic per calcular la lletra corresponent d’un DNI, donat el número (sense lletra).
+
+Crea una classe de test amb JUnit 5 que parametritzi una sèrie de proves per validar el comportament correcte del càlcul.
+
+El test ha de comprovar com a mínim 10 casos de números de DNI diferents amb la seva lletra corresponent, validant que el resultat del mètode coincideix amb el valor esperat.
+
+També s'ha de validar valors invàlids, com números negatius o massa grans, per comprovar que el mètode gestiona correctament aquestes situacions (per exemple, llençant una excepció).
+
+---
+
+### Implementation
+
+A utility class `CalculateDNI` was implemented with:
+
+- A static constant containing the official DNI letter table
+- A public static method `calculateDniLetter(int dniNumber)`
+- Input validation (negative and out-of-range values)
+- `IllegalArgumentException` for invalid inputs
+
+---
+
+### Unit Testing
+
+The test class includes:
+
+- A `@ParameterizedTest` with 10 valid DNI cases
+- Validation of expected letters
+- A separate test verifying that invalid values throw `IllegalArgumentException`
 
 All tests pass successfully.
 

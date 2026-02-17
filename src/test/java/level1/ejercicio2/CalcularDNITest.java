@@ -27,4 +27,15 @@ public class CalcularDNITest {
 
         assertEquals(expectedLetter, result);
     }
+    @Test
+    void calculateDniLetterShouldThrowExceptionForInvalidNumbers() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            CalculateDNI.calculateDniLetter(-1);
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            CalculateDNI.calculateDniLetter(100000000);
+        });
+    }
 }
