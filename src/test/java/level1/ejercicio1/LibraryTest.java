@@ -106,12 +106,10 @@ class LibraryTest {
 
         var sortedBooks = library.getSortedBooks();
 
-        // Comprobamos que está ordenada
         assertEquals("1984", sortedBooks.get(0));
         assertEquals("Dune", sortedBooks.get(1));
         assertEquals("The Hobbit", sortedBooks.get(2));
 
-        // Comprobamos que la original NO cambió
         assertEquals("Dune", library.getBookByPosition(0));
         assertEquals("1984", library.getBookByPosition(1));
         assertEquals("The Hobbit", library.getBookByPosition(2));

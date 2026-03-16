@@ -21,16 +21,12 @@ public class Exercise4Test {
         list.add(number);
         list.add(decimal);
 
-        // Verify exact order
         assertThat(list).containsExactly(text, number, decimal);
 
-        // Verify contains in any order
         assertThat(list).containsExactlyInAnyOrder(decimal, text, number);
 
-        // Verify appears only once
         assertThat(list).containsOnlyOnce(text);
 
-        // Verify does not contain an element not added
         assertThat(list).doesNotContain("NotAdded");
     }
 }
